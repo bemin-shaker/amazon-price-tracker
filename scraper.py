@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import smtplib
 import time
 
-URL = 'https://www.amazon.com/Apple-iPad-10-2-Inch-Wi-Fi-Cellular/dp/B07XL7G5CK/ref=sr_1_1_sspa?dchild=1&keywords=ipad&qid=1593045964&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGMEFTSENQT01GNlMmZW5jcnlwdGVkSWQ9QTA1NDk3ODUyR0JOVU41T0cxQ0tDJmVuY3J5cHRlZEFkSWQ9QTA3NzQxNDUzTUpSVVM5VjhJOVUzJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=='
+URL = '#the url address of the product'
 
 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
 
@@ -30,7 +30,7 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('beminshaker@gmail.com', 'ubbfijpjlowiqpcs')
+    server.login('#email', '#password')
 
     subject = 'Price Dropped!'
     body = 'Check the Amazon link https://www.amazon.com/Apple-iPad-10-2-Inch-Wi-Fi-Cellular/dp/B07XL7G5CK/ref=sr_1_1_sspa?dchild=1&keywords=ipad&qid=1593045964&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGMEFTSENQT01GNlMmZW5jcnlwdGVkSWQ9QTA1NDk3ODUyR0JOVU41T0cxQ0tDJmVuY3J5cHRlZEFkSWQ9QTA3NzQxNDUzTUpSVVM5VjhJOVUzJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=='
@@ -38,8 +38,8 @@ def send_mail():
     msg = f'Subject: {subject}\n\n{body}'
 
     server.sendmail(
-        'beminshaker@gmail.com',
-        'beminshaker@outlook.com',
+        '#sent-to-email',
+        '#additional email',
         msg
     )
 
